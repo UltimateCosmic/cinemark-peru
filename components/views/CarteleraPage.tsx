@@ -147,7 +147,7 @@ export default function CarteleraPage() {
           filteredMovies.map((movie) => (
             <div key={movie.id} className="bg-cinemark-dark border border-cinemark-gray rounded-lg overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] lg:grid-cols-[250px_1fr]">
-                <div className="relative h-[300px] md:h-full">
+                <div className="relative aspect-[2/3] md:h-full">
                   <Image src={movie.imagen || "/placeholder.svg"} alt={movie.titulo} fill className="object-cover" />
                 </div>
                 <div className="p-6">

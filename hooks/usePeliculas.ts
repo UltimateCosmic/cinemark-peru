@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 export type Pelicula = {
   id: number
   titulo: string
+  descripcion?: string
   duracion: string
   clasificacion: string
   genero?: string | string[]
@@ -10,6 +11,7 @@ export type Pelicula = {
   formato?: string[]
   idioma?: string[]
   horarios?: string[]
+  fechaEstreno?: string[]
 }
 
 export function usePeliculas() {

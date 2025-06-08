@@ -36,6 +36,14 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMovie((prev) => (prev + 1) % posters.length)
+    }, 3000)
+  
+    return () => clearInterval(interval)
+  }, [posters.length])  
+
   return (
     <div className="flex flex-col min-h-screen">
 

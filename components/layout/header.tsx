@@ -75,7 +75,7 @@ export default function Header() {
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Cinemark Perú</span>
               <Image
-                src="/placeholder.svg?height=40&width=150"
+                src="/cinemark-logo.png"
                 alt="Cinemark Perú"
                 width={150}
                 height={40}

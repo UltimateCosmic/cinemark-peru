@@ -26,7 +26,7 @@ export default function PeliculasPage() {
     return movies.filter(
       (movie) =>
         movie.titulo.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (movie.genero && movie.genero.toLowerCase().includes(searchQuery.toLowerCase()))
+        (movie.genero && (Array.isArray(movie.genero) ? movie.genero.join(' ').toLowerCase() : movie.genero.toLowerCase()).includes(searchQuery.toLowerCase()))
     )
   }
 
