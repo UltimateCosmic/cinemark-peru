@@ -1,0 +1,156 @@
+[
+    {
+        "id": 1,
+        "nombre": "Cinemark Mallplaza Bellavista",
+        "direccion": "Av. Oscar R. Benavides (Ex Colonial) 3866, Centro Comercial Mall Plaza Bellavista",
+        "imagen": "/cines/Bellavista-1.webp",
+        "cartelera": [
+            {
+                "id": 1,
+                "horarios": [
+                    "14:00",
+                    "17:30",
+                    "21:00"
+                ]
+            },
+            {
+                "id": 2,
+                "horarios": [
+                    "12:00",
+                    "15:30",
+                    "19:00"
+                ]
+            },
+            {
+                "id": 4,
+                "horarios": [
+                    "11:45",
+                    "14:15",
+                    "18:00"
+                ]
+            }
+        ],
+        "horario": "10:00 - 23:00",
+        "servicios": [
+            "XD",
+            "3D",
+            "Salas Prime",
+            "Confitería"
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "Cinemark San Miguel",
+        "direccion": "Av. La Marina cuadra 25 con esquina Av. Parque de las Leyendas",
+        "imagen": "/cines/san-miguel-1.webp",
+        "cartelera": [
+            {
+                "id": 3,
+                "horarios": [
+                    "14:00",
+                    "17:30",
+                    "21:00"
+                ]
+            },
+            {
+                "id": 5,
+                "horarios": [
+                    "12:00",
+                    "15:30",
+                    "19:00"
+                ]
+            },
+            {
+                "id": 6,
+                "horarios": [
+                    "11:45",
+                    "14:15",
+                    "18:00"
+                ]
+            }
+        ],
+        "horario": "10:30 - 22:30",
+        "servicios": [
+            "XD",
+            "Confitería",
+            "Salas Clásicas"
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "Cinemark Gamarra",
+        "direccion": "Avenida Aviación 950 La Victoria, LIMA 13",
+        "imagen": "/cines/FOTO-WEB-GAMARRA.webp",
+        "cartelera": [
+            {
+                "id": 1,
+                "horarios": [
+                    "14:00",
+                    "17:30",
+                    "21:00"
+                ]
+            },
+            {
+                "id": 2,
+                "horarios": [
+                    "12:00",
+                    "15:30",
+                    "19:00"
+                ]
+            },
+            {
+                "id": 3,
+                "horarios": [
+                    "11:45",
+                    "14:15",
+                    "18:00"
+                ]
+            }
+        ],
+        "horario": "11:00 - 23:00",
+        "servicios": [
+            "3D",
+            "Salas Clásicas",
+            "Confitería"
+        ]
+    },
+    {
+        "id": 4,
+        "nombre": "Cinemark Megaplaza",
+        "direccion": "Calle Alfredo Mendiola 3698 Km 8.5 de la Av. Panamericana Norte Independencia",
+        "imagen": "/cines/Mega-1.webp",
+        "cartelera": [
+            {
+                "id": 4,
+                "horarios": [
+                    "14:00",
+                    "17:30",
+                    "21:00"
+                ]
+            },
+            {
+                "id": 5,
+                "horarios": [
+                    "12:00",
+                    "15:30",
+                    "19:00"
+                ]
+            },
+            {
+                "id": 6,
+                "horarios": [
+                    "11:45",
+                    "14:15",
+                    "18:00"
+                ]
+            }
+        ],
+        "horario": "09:30 - 22:00",
+        "servicios": [
+            "XD",
+            "3D",
+            "Salas Prime",
+            "Confitería"
+        ]
+    }
+]

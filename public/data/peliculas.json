@@ -1,0 +1,126 @@
+{
+	"cartelera": [
+		{
+			"id": 1,
+			"titulo": "Bailarina",
+			"duracion": "125 min",
+			"clasificacion": "M14",
+			"genero": "Acción",
+			"imagen": "/cartelera/bailarina.jpg",
+			"formato": ["2D", "3D", "XD"],
+  			"idioma": ["DOB", "SUB"]
+		},
+		{
+			"id": 2,
+			"titulo": "Dan Da Dan: Evil Eye",
+			"duracion": "93 min",
+			"clasificacion": "M14",
+			"genero": "Animación",
+			"imagen": "/cartelera/dandadan.jpg",
+			"formato": ["2D"],
+  			"idioma": ["SUB"]
+		},
+		{
+			"id": 3,
+			"titulo": "Misión Imposible: Sentencia Final",
+			"duracion": "169 min",
+			"clasificacion": "M14",
+			"genero": "Acción",
+			"imagen": "/cartelera/misionimposible.jpg",
+			"formato": ["2D", "3D", "XD"],
+  			"idioma": ["DOB", "SUB"]
+		},
+		{
+			"id": 4,
+			"titulo": "Lilo y Stitch",
+			"duracion": "108 min",
+			"clasificacion": "APT",
+			"genero": "Familiar",
+			"imagen": "/cartelera/liloystitch.jpg",
+			"formato": ["2D", "3D", "XD"],
+  			"idioma": ["DOB", "SUB"]
+		},
+		{
+			"id": 5,
+			"titulo": "Destino Final: Lazos de Sangre",
+			"duracion": "110 min",
+			"clasificacion": "M14",
+			"genero": "Terror",
+			"imagen": "/cartelera/destinofinal.jpg",
+			"formato": ["2D", "3D", "XD"],
+  			"idioma": ["DOB", "SUB"]
+		},
+		{
+			"id": 6,
+			"titulo": "Karate Kid: Leyendas",
+			"duracion": "94 min",
+			"clasificacion": "APT",
+			"genero": "Acción",
+			"imagen": "/cartelera/karatekid.jpg",
+			"formato": ["2D", "3D"],
+  			"idioma": ["DOB", "SUB"]
+		}
+	],
+	"proximosEstrenos": [
+		{
+			"id": 1,
+			"titulo": "Amor en la gran ciudad",
+			"duracion": "118 min",
+			"clasificacion": "M14",
+			"fechaEstreno": "12 JUN. 2025",
+			"descripcion": "Una historia sobre encontrar el amor en medio del caos urbano.",
+			"genero": "Acción",
+			"imagen": "/estrenos/amor-ciudad.jpg"
+		},
+		{
+			"id": 2,
+			"titulo": "Cómo entrenar a tu dragón",
+			"duracion": "125 min",
+			"clasificacion": "APT",
+			"fechaEstreno": "12 JUN. 2025",
+			"descripcion": "Una nueva aventura llena de dragones y amistad.",
+			"genero": "Acción",
+			"imagen": "/estrenos/dragon.jpg"
+		},
+		{
+			"id": 3,
+			"titulo": "Cuadrilátero",
+			"duracion": "85 min",
+			"clasificacion": "M14",
+			"fechaEstreno": "12 JUN. 2025",
+			"descripcion": "Drama y acción dentro y fuera del ring.",
+			"genero": "Acción",
+			"imagen": "/estrenos/cuadrilatero.jpg"
+		},
+		{
+			"id": 4,
+			"titulo": "ADO Special Shinzou",
+			"duracion": "140 min",
+			"clasificacion": "M14",
+			"fechaEstreno": "19 JUN. 2025",
+			"descripcion": "Un especial de concierto visualmente impactante.",
+			"genero": "Acción",
+			"imagen": "/estrenos/ado-special-shinzou.jpg"
+		},
+		{
+			"id": 5,
+			"titulo": "ATEEZ World Tour Towards the Light WIL",
+			"duracion": "125 min",
+			"clasificacion": "M14",
+			"fechaEstreno": "19 JUN. 2025",
+			"descripcion": "Un recorrido musical de una de las bandas más influyentes del K-pop.",
+			"genero": "Acción",
+			"imagen": "/estrenos/ateez.jpg"
+		},
+		{
+			"id": 6,
+			"titulo": "Elio",
+			"duracion": "90 min",
+			"clasificacion": "APT",
+			"fechaEstreno": "19 JUN. 2025",
+			"descripcion": "Un niño común en una misión intergaláctica extraordinaria.",
+			"genero": "Acción",
+			"imagen": "/estrenos/elio.jpg"
+		}
+	]
+}

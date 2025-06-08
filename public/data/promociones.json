@@ -1,0 +1,63 @@
+[
+	{
+	  "titulo": "Promo Online D-BOX",
+	  "inicio": "01 ENE. 2025",
+	  "fin": "31 JUL. 2025",
+	  "imagen": "/promociones/banner-promo-DBOX.webp"
+	},
+	{
+	  "titulo": "Martes de DBOX",
+	  "inicio": "01 ENE. 2025",
+	  "fin": "31 JUL. 2025",
+	  "imagen": "/promociones/banner-promo-DBOX (1).webp"
+	},
+	{
+	  "titulo": "Miércoles XD",
+	  "inicio": "01 ENE. 2025",
+	  "fin": "31 JUL. 2025",
+	  "imagen": "/promociones/promo-xd-web.webp"
+	},
+	{
+	  "titulo": "Función de Descuento",
+	  "inicio": "01 ENE. 2025",
+	  "fin": "31 DIC. 2025",
+	  "imagen": "/promociones/banner-promo-FD.webp"
+	},
+	{
+	  "titulo": "Cumpleaños Cinemark",
+	  "inicio": null,
+	  "fin": null,
+	  "imagen": "/promociones/BANNER-cumplea_os.webp"
+	},
+	{
+	  "titulo": "GAMING BOX",
+	  "inicio": null,
+	  "fin": null,
+	  "imagen": "/promociones/banner-promociones-gaming-box.webp"
+	},
+	{
+	  "titulo": "Promo Universitarios",
+	  "inicio": "24 MAR. 2025",
+	  "fin": "21 JUL. 2025",
+	  "imagen": "/promociones/PROMO-uni-web.webp"
+	},
+	{
+	  "titulo": "Promo Online",
+	  "inicio": "07 JUN. 2025",
+	  "fin": "08 JUN. 2025",
+	  "imagen": "/promociones/2-TyC-banner-web.webp"
+	},
+	{
+	  "titulo": "Promo Claro",
+	  "inicio": "15 MAY. 2025",
+	  "fin": "23 JUL. 2025",
+	  "imagen": "/promociones/DISE_O_WEB_CLARO.jpg"
+	},
+	{
+	  "titulo": "Promo Ripley",
+	  "inicio": "01 JUN. 2025",
+	  "fin": "31 OCT. 2025",
+	  "imagen": "/promociones/Web_900x_536.jpg"
+	}
+  ]
+  
