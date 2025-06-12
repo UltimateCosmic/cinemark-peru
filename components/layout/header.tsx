@@ -93,7 +93,7 @@ export default function Header() {
           </div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-800">
-              <div className="space-y-2 py-6">
+              <div className="space-y-2 py-6 uppercase">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
