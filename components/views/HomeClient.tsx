@@ -22,6 +22,7 @@ import { TheatreGroup } from "@/types/theatre";
 
 // Utilidades locales
 import { getCinemaImage } from "@/lib/get-cinema-image";
+import LoadingScreen from "../loading-screen";
 
 // Constantes
 const posters = [
@@ -165,9 +166,13 @@ export default function Home() {
     setSelectedMovie(null);
   };
 
+  // Loading
+  if (loading) {
+    return <LoadingScreen text="Cargando Cinemark..." />
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
-
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden">
         {posters.map((poster, index) => (
