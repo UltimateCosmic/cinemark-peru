@@ -1,34 +1,80 @@
 "use client"
 
-import { useState } from "react"
+// React
+import { useEffect, useMemo, useState } from "react"
+
+// Next
 import Image from "next/image"
+
+// Librerías de terceros
+import { Search, MapPin, Phone, Navigation } from "lucide-react"
+
+// Componentes UI
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { Search, MapPin, Clock, Phone, Navigation } from "lucide-react"
-import { useCines } from "@/hooks/useCines"
+
+// Tipos
+import { TheatreGroup } from "@/types/theatre"
+
+// Utilidades locales
+import { getCinemaImage } from "@/lib/get-cinema-image";
+import LoadingScreen from "../loading-screen"
 
 export default function CinesPage() {
+  const [theatres, setTheatres] = useState<TheatreGroup[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedDistrict, setSelectedDistrict] = useState("todos")
-  const cines = useCines()
 
-  // Obtener distritos únicos para el filtro
-  const districts = [...new Set(cines.map((cine) => cine.direccion.split(", ").pop() || ""))].sort()
+  useEffect(() => {
+    const fetchTheatres = async () => {
+      try {
+        const res = await fetch("/api/theatre");
+        if (!res.ok) throw new Error("Error al obtener los cines");
+        const data: TheatreGroup[] = await res.json();
+        setTheatres(data);
+      } catch (err: any) {
+        setError(err.message || "Error desconocido");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchTheatres();
+  }, []);
 
-  // Filtrar cines según la búsqueda y distrito seleccionado
-  const filteredCines = cines.filter((cine) => {
-    const matchesSearch =
-      searchQuery === "" ||
-      cine.nombre.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      cine.direccion.toLowerCase().includes(searchQuery.toLowerCase())
+  // Filtros de búsqueda   
+  const allCinemas = useMemo(() => {
+    return theatres.flatMap(group => group.cinemas)
+  }, [theatres])
 
-    const matchesDistrict = selectedDistrict === "todos" || cine.direccion.includes(selectedDistrict)
+  const districts = useMemo(() => {
+    const unique = new Set(
+      allCinemas.map(cine => cine.City.trim()).filter(Boolean)
+    )
+    return Array.from(unique).sort()
+  }, [allCinemas])
 
-    return matchesSearch && matchesDistrict
-  })
+  const filteredCines = useMemo(() => {
+    return allCinemas.filter(cine => {
+      const matchesSearch =
+        searchQuery === "" ||
+        cine.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        cine.Address1.toLowerCase().includes(searchQuery.toLowerCase())
+
+      const matchesDistrict =
+        selectedDistrict === "todos" || cine.City === selectedDistrict
+
+      return matchesSearch && matchesDistrict
+    })
+  }, [allCinemas, searchQuery, selectedDistrict])
+
+  // Loading
+  if (loading) {
+    return <LoadingScreen text="Cargando Cines..." />
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 md:px-8">
@@ -64,9 +110,9 @@ export default function CinesPage() {
 
       <div className="mb-6">
         <p className="text-gray-300">
-          {filteredCines.length === cines.length
-            ? `Mostrando todos los ${cines.length} cines`
-            : `Mostrando ${filteredCines.length} de ${cines.length} cines`}
+          {filteredCines.length === allCinemas.length
+            ? `Mostrando todos los ${allCinemas.length} cines`
+            : `Mostrando ${filteredCines.length} de ${allCinemas.length} cines`}
         </p>
       </div>
 
@@ -74,38 +120,23 @@ export default function CinesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredCines.map((cine) => (
             <Card
-              key={cine.id}
+              key={cine.ID}
               className="cinema-card bg-cinemark-dark border-cinemark-gray overflow-hidden transition-transform duration-300 hover:scale-105"
             >
               <div className="relative h-48">
-                <Image src={cine.imagen || "/placeholder.svg"} alt={cine.nombre} fill className="object-cover" />
+                <Image src={getCinemaImage(cine.Name) || "/placeholder.svg"} alt={cine.Name} fill className="object-cover" />
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">{cine.nombre}</h3>
+                <h3 className="text-xl font-bold mb-2">{cine.Name}</h3>
 
                 <div className="flex items-start gap-2 mb-3">
                   <MapPin className="h-4 w-4 text-cinemark-red shrink-0 mt-0.5" />
-                  <p className="text-sm text-gray-300">{cine.direccion}</p>
+                  <p className="text-sm text-gray-300">{cine.Address1}</p>
                 </div>
 
                 <div className="flex items-center gap-2 mb-3">
-                  <Clock className="h-4 w-4 text-cinemark-red" />
-                  <p className="text-sm text-gray-300">{cine.horario}</p>
-                </div>
-
-                <div className="mb-4">
-                  <p className="text-sm font-medium text-gray-300 mb-2">Servicios:</p>
-                  <div className="flex flex-wrap gap-1">
-                    {cine.servicios?.map((service) => (
-                      <Badge
-                        key={service}
-                        variant="outline"
-                        className="border-cinemark-gold text-cinemark-gold text-xs"
-                      >
-                        {service}
-                      </Badge>
-                    ))}
-                  </div>
+                  <Phone className="h-4 w-4 text-cinemark-red" />
+                  <p className="text-sm text-gray-300">{cine.PhoneNumber}</p>
                 </div>
 
                 <div className="flex flex-col gap-2">
